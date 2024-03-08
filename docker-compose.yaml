@@ -33,8 +33,10 @@ services:
       - "80:80"
       - "443:443"
     environment:
-      CF_API_EMAIL: ${CF_API_EMAIL}
-      CF_API_KEY: ${CF_API_KEY}
+      NAMECHEAP_API_USER: ${NAMECHEAP_API_USER}
+      NAMECHEAP_API_KEY: ${NAMECHEAP_API_KEY}
+      # CF_API_EMAIL: ${CF_API_EMAIL}
+      # CF_API_KEY: ${CF_API_KEY}
     volumes:
       - "./letsencrypt:/letsencrypt"
       - "/var/run/docker.sock:/var/run/docker.sock:ro"
