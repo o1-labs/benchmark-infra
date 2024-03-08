@@ -94,6 +94,8 @@ services:
       GF_AUTH_ORG_ROLE: ${GRAFANA_USER_ROLE}
       GF_SERVER_ROOT_URL: https://${GRAFANA_FQDN}:443
       GF_SERVER_DOMAIN: ${GRAFANA_FQDN}
+      INFLUXDB_PASSWORD: ${INFLUXDB_PASSWORD}
+      INFLUXDB_AUTH_HEADER: ${INFLUXDB_AUTH_HEADER}
     labels:
       - "traefik.enable=true"
       - "traefik.http.routers.grafana.rule=Host(`${GRAFANA_FQDN}`)"

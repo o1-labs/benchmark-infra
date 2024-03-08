@@ -18,5 +18,7 @@ datasources:
     url: http://influxdb:8086
     jsonData:
       httpMode: POST
+      httpHeaderName1: "Authorization"
     secureJsonData:
-      password: ""
+      httpHeaderValue1: ${INFLUXDB_AUTH_HEADER}
+      password: ${INFLUXDB_PASSWORD}
