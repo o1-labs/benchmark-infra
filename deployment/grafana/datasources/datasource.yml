@@ -8,7 +8,7 @@ datasources:
     basicAuth: false
     isDefault: false
     editable: true
-  - name: InfluxDB
+  - name: "InfluxDB (o1js)"
     type: influxdb
     access: proxy
     database: o1labs
@@ -19,6 +19,8 @@ datasources:
     jsonData:
       httpMode: POST
       httpHeaderName1: "Authorization"
+      organization: ${INFLUXDB_ORG}
+      defaultBucket: ${INFLUXDB_BUCKET}
     secureJsonData:
       httpHeaderValue1: ${INFLUXDB_AUTH_HEADER}
       password: ${INFLUXDB_PASSWORD}

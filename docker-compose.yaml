@@ -99,6 +99,8 @@ services:
       GF_SERVER_DOMAIN: ${GRAFANA_FQDN}
       INFLUXDB_PASSWORD: ${INFLUXDB_PASSWORD}
       INFLUXDB_AUTH_HEADER: ${INFLUXDB_AUTH_HEADER}
+      INFLUXDB_ORG: ${INFLUXDB_ORG}
+      INFLUXDB_BUCKET: ${INFLUXDB_BUCKET}
     labels:
       - "traefik.enable=true"
       - "traefik.http.routers.grafana.rule=Host(`${GRAFANA_FQDN}`)"
