@@ -105,7 +105,7 @@
           {
             "matcher": {
               "id": "byName",
-              "options": "ecdsa - build constraint system - 5 samples mean {benchmarkName=\"ecdsa - build constraint system\", gitBranch=\"unknown\", gitHash=\"unknown\", hardware=\"Intel(R) Core(TM) i9-9980HK CPU @ 2.40GHz 16 cores, 32.00Gb of RAM\", operatingSystem=\"Darwin 23.4.0 x64 \", sourceEnvironment=\"local\"}"
+              "options": "ecdsa - build constraint system - 5 samples mean {benchmarkName=\"ecdsa - build constraint system\", gitBranch=\"unknown\", gitHash=\"unknown\", hardware=\"Intel(R) Core(TM) i9-9980HK CPU @ 2.40GHz 16 cores, 32.00Gb of RAM\", operatingSystem=\"Darwin 23.4.0 x64 \", sampledTimes=\"5\", sourceEnvironment=\"local\"}"
             },
             "properties": [
               {
@@ -117,7 +117,7 @@
           {
             "matcher": {
               "id": "byName",
-              "options": "ecdsa - witness generation - 5 samples mean {benchmarkName=\"ecdsa - witness generation\", gitBranch=\"unknown\", gitHash=\"unknown\", hardware=\"Intel(R) Core(TM) i9-9980HK CPU @ 2.40GHz 16 cores, 32.00Gb of RAM\", operatingSystem=\"Darwin 23.4.0 x64 \", sourceEnvironment=\"local\"}"
+              "options": "ecdsa - witness generation - 5 samples mean {benchmarkName=\"ecdsa - witness generation\", gitBranch=\"unknown\", gitHash=\"unknown\", hardware=\"Intel(R) Core(TM) i9-9980HK CPU @ 2.40GHz 16 cores, 32.00Gb of RAM\", operatingSystem=\"Darwin 23.4.0 x64 \", sampledTimes=\"5\", sourceEnvironment=\"local\"}"
             },
             "properties": [
               {
@@ -227,7 +227,7 @@
       {
         "allValue": "",
         "current": {
-          "selected": true,
+          "selected": false,
           "text": ["All"],
           "value": ["$__all"]
         },
@@ -251,7 +251,7 @@
       },
       {
         "current": {
-          "selected": true,
+          "selected": false,
           "text": ["All"],
           "value": ["$__all"]
         },
@@ -275,7 +275,7 @@
       },
       {
         "current": {
-          "selected": true,
+          "selected": false,
           "text": ["All"],
           "value": ["$__all"]
         },
@@ -300,8 +300,8 @@
       {
         "current": {
           "selected": false,
-          "text": "All",
-          "value": "$__all"
+          "text": ["All"],
+          "value": ["$__all"]
         },
         "datasource": {
           "type": "influxdb",
@@ -323,7 +323,7 @@
       },
       {
         "current": {
-          "selected": true,
+          "selected": false,
           "text": ["All"],
           "value": ["$__all"]
         },
