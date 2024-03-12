@@ -101,6 +101,7 @@ services:
       INFLUXDB_AUTH_HEADER: ${INFLUXDB_AUTH_HEADER}
       INFLUXDB_ORG: ${INFLUXDB_ORG}
       INFLUXDB_BUCKET: ${INFLUXDB_BUCKET}
+      INFLUXDB_TOKEN: ${INFLUXDB_TOKEN}
     labels:
       - "traefik.enable=true"
       - "traefik.http.routers.grafana.rule=Host(`${GRAFANA_FQDN}`)"

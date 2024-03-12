@@ -17,6 +17,7 @@ datasources:
     user: admin
     url: http://influxdb:8086
     jsonData:
+      version: Flux
       httpMode: POST
       httpHeaderName1: "Authorization"
       organization: ${INFLUXDB_ORG}
@@ -24,3 +25,4 @@ datasources:
     secureJsonData:
       httpHeaderValue1: ${INFLUXDB_AUTH_HEADER}
       password: ${INFLUXDB_PASSWORD}
+      token: ${INFLUXDB_TOKEN}
