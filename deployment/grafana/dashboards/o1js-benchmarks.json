@@ -210,7 +210,7 @@
           "uid": "PA37C35462CC6599F"
         },
         "definition": "import \"influxdata/influxdb/schema\"\nschema.tagValues(\n  bucket: \"o1js-benchmarks\",\n  tag: \"benchmarkName\"\n)",
-        "description": "Benchmark type.",
+        "description": "Benchmark types.",
         "hide": 0,
         "includeAll": true,
         "label": "Benchmark",
@@ -236,7 +236,7 @@
           "uid": "PA37C35462CC6599F"
         },
         "definition": "import \"influxdata/influxdb/schema\"\nschema.tagValues(\n  bucket: \"o1js-benchmarks\",\n  tag: \"sourceEnvironment\"\n)",
-        "description": "Environment the benchmarks were executed on.",
+        "description": "Environment settings the benchmarks were executed in.",
         "hide": 0,
         "includeAll": true,
         "label": "Source environment",
@@ -261,7 +261,7 @@
           "uid": "PA37C35462CC6599F"
         },
         "definition": "import \"influxdata/influxdb/schema\"\nschema.tagValues(\n  bucket: \"o1js-benchmarks\",\n  tag: \"operatingSystem\"\n)",
-        "description": "Operating system used upon benchmarks execution.",
+        "description": "Operating system utilized during the benchmarks execution.",
         "hide": 0,
         "includeAll": true,
         "label": "OS",
@@ -286,7 +286,7 @@
           "uid": "PA37C35462CC6599F"
         },
         "definition": "import \"influxdata/influxdb/schema\"\nschema.tagValues(\n  bucket: \"o1js-benchmarks\",\n  tag: \"hardware\"\n)",
-        "description": "CPU and RAM configuration used upon benchmarks execution.",
+        "description": "CPU and RAM configuration utilized during the benchmarks execution.",
         "hide": 0,
         "includeAll": true,
         "label": "Hardware",
@@ -311,7 +311,7 @@
           "uid": "PA37C35462CC6599F"
         },
         "definition": "import \"influxdata/influxdb/schema\"\nschema.tagValues(\n  bucket: \"o1js-benchmarks\",\n  tag: \"gitBranch\"\n)",
-        "description": "Git branch the benchmarks were executed from.",
+        "description": "Git branch from which the benchmarks were executed.",
         "hide": 0,
         "includeAll": true,
         "label": "Git branch",
@@ -336,7 +336,7 @@
           "uid": "PA37C35462CC6599F"
         },
         "definition": "import \"influxdata/influxdb/schema\"\nschema.tagValues(\n  bucket: \"o1js-benchmarks\",\n  tag: \"sampledTimes\"\n)",
-        "description": "Amount of benchmarks executed before calculating the 'mean' to be sent into the storage.",
+        "description": "Number of benchmarks performed prior to computing the 'mean', which is subsequently saved in storage.",
         "hide": 0,
         "includeAll": true,
         "label": "Sampled times",
@@ -360,6 +360,6 @@
   "timezone": "browser",
   "title": "o1js benchmarks",
   "uid": "adffpubsh4zy8e",
-  "version": 6,
+  "version": 7,
   "weekStart": "monday"
 }
