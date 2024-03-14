@@ -57,11 +57,13 @@
             "axisBorderShow": false,
             "axisCenteredZero": false,
             "axisColorMode": "text",
+            "axisGridShow": true,
             "axisLabel": "",
             "axisPlacement": "auto",
+            "axisSoftMin": 0,
             "barAlignment": 0,
             "drawStyle": "line",
-            "fillOpacity": 10,
+            "fillOpacity": 2,
             "gradientMode": "opacity",
             "hideFrom": {
               "legend": false,
@@ -70,13 +72,16 @@
             },
             "insertNulls": false,
             "lineInterpolation": "smooth",
+            "lineStyle": {
+              "fill": "solid"
+            },
             "lineWidth": 1,
             "pointSize": 5,
             "scaleDistribution": {
               "type": "linear"
             },
-            "showPoints": "auto",
-            "spanNulls": false,
+            "showPoints": "always",
+            "spanNulls": true,
             "stacking": {
               "group": "A",
               "mode": "none"
@@ -85,6 +90,7 @@
               "mode": "off"
             }
           },
+          "fieldMinMax": false,
           "mappings": [],
           "thresholds": {
             "mode": "absolute",
@@ -101,7 +107,196 @@
           },
           "unit": "ms"
         },
-        "overrides": []
+        "overrides": [
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "build constraint system - upperBound"
+            },
+            "properties": [
+              {
+                "id": "custom.fillBelowTo",
+                "value": "build constraint system - lowerBound"
+              },
+              {
+                "id": "custom.fillOpacity",
+                "value": 35
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "witness generation - upperBound"
+            },
+            "properties": [
+              {
+                "id": "custom.fillBelowTo",
+                "value": "witness generation - lowerBound"
+              },
+              {
+                "id": "custom.fillOpacity",
+                "value": 35
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "build constraint system - upperBound"
+            },
+            "properties": [
+              {
+                "id": "custom.drawStyle",
+                "value": "line"
+              },
+              {
+                "id": "custom.lineInterpolation",
+                "value": "smooth"
+              },
+              {
+                "id": "custom.gradientMode",
+                "value": "none"
+              },
+              {
+                "id": "custom.lineStyle",
+                "value": {
+                  "dash": [10, 10],
+                  "fill": "dash"
+                }
+              },
+              {
+                "id": "custom.showPoints",
+                "value": "never"
+              },
+              {
+                "id": "custom.pointSize",
+                "value": 3
+              },
+              {
+                "id": "custom.lineWidth",
+                "value": 1
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "build constraint system - lowerBound"
+            },
+            "properties": [
+              {
+                "id": "custom.drawStyle",
+                "value": "line"
+              },
+              {
+                "id": "custom.lineInterpolation",
+                "value": "smooth"
+              },
+              {
+                "id": "custom.lineStyle",
+                "value": {
+                  "dash": [10, 10],
+                  "fill": "dash"
+                }
+              },
+              {
+                "id": "custom.showPoints",
+                "value": "never"
+              },
+              {
+                "id": "custom.pointSize",
+                "value": 3
+              },
+              {
+                "id": "custom.gradientMode",
+                "value": "none"
+              },
+              {
+                "id": "custom.lineWidth",
+                "value": 1
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "witness generation - upperBound"
+            },
+            "properties": [
+              {
+                "id": "custom.drawStyle",
+                "value": "line"
+              },
+              {
+                "id": "custom.lineInterpolation",
+                "value": "smooth"
+              },
+              {
+                "id": "custom.gradientMode",
+                "value": "none"
+              },
+              {
+                "id": "custom.lineStyle",
+                "value": {
+                  "dash": [10, 10],
+                  "fill": "dash"
+                }
+              },
+              {
+                "id": "custom.showPoints",
+                "value": "never"
+              },
+              {
+                "id": "custom.pointSize",
+                "value": 3
+              },
+              {
+                "id": "custom.lineWidth",
+                "value": 1
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "witness generation - lowerBound"
+            },
+            "properties": [
+              {
+                "id": "custom.drawStyle",
+                "value": "line"
+              },
+              {
+                "id": "custom.lineInterpolation",
+                "value": "smooth"
+              },
+              {
+                "id": "custom.gradientMode",
+                "value": "none"
+              },
+              {
+                "id": "custom.lineStyle",
+                "value": {
+                  "dash": [10, 10],
+                  "fill": "dash"
+                }
+              },
+              {
+                "id": "custom.showPoints",
+                "value": "never"
+              },
+              {
+                "id": "custom.pointSize",
+                "value": 3
+              },
+              {
+                "id": "custom.lineWidth",
+                "value": 1
+              }
+            ]
+          }
+        ]
       },
       "gridPos": {
         "h": 18,
@@ -141,7 +336,7 @@
           "measurement": "o1labs_zkapp_for_e2e_testing_compilation",
           "orderByTime": "ASC",
           "policy": "default",
-          "query": "from(bucket: \"o1js-benchmarks\")\n  |> range(start: v.timeRangeStart, stop: v.timeRangeStop)\n  |> filter(fn: (r) => r[\"_measurement\"] =~ /^ecdsa - build constraint system - \\d+ samples$/ or r[\"_measurement\"] =~ /^ecdsa - witness generation - \\d+ samples$/)\n  |> filter(fn: (r) => r[\"_field\"] == \"mean\")\n  |> filter(fn: (r) => r[\"benchmarkName\"] =~ /^${benchmarkFilterQuery:regex}$/)\n  |> filter(fn: (r) => r[\"sourceEnvironment\"] =~ /^${sourceEnvironmentFilterQuery:regex}$/)\n  |> filter(fn: (r) => r[\"operatingSystem\"] =~ /^${operatingSystemFilterQuery:regex}$/)\n  |> filter(fn: (r) => r[\"hardware\"] =~ /^${hardwareFilterQuery:regex}$/)\n  |> filter(fn: (r) => r[\"gitBranch\"] =~ /^${gitBranchFilterQuery:regex}$/)\n  |> filter(fn: (r) => r[\"sampledTimes\"] =~ /^${sampledTimesFilterQuery:regex}$/)\n  |> aggregateWindow(every: v.windowPeriod, fn: mean, createEmpty: false)\n  |> yield(name: \"data\")",
+          "query": "from(bucket: \"o1js-benchmarks\")\n  |> range(start: v.timeRangeStart, stop: v.timeRangeStop)\n  |> filter(fn: (r) => r[\"_measurement\"] =~ /^ecdsa - build constraint system - \\d+ samples$/ or r[\"_measurement\"] =~ /^ecdsa - witness generation - \\d+ samples$/)\n  |> filter(fn: (r) => r[\"_field\"] == \"mean\")\n  |> filter(fn: (r) => r[\"benchmarkName\"] =~ /^${benchmarkFilterQuery:regex}$/)\n  |> filter(fn: (r) => r[\"sourceEnvironment\"] =~ /^${sourceEnvironmentFilterQuery:regex}$/)\n  |> filter(fn: (r) => r[\"operatingSystem\"] =~ /^${operatingSystemFilterQuery:regex}$/)\n  |> filter(fn: (r) => r[\"hardware\"] =~ /^${hardwareFilterQuery:regex}$/)\n  |> filter(fn: (r) => r[\"gitBranch\"] =~ /^${gitBranchFilterQuery:regex}$/)\n  |> filter(fn: (r) => r[\"sampledTimes\"] =~ /^${sampledTimesFilterQuery:regex}$/)\n  |> aggregateWindow(every: v.windowPeriod, fn: mean, createEmpty: false)\n  |> yield(name: \"mean\")\n\nfrom(bucket: \"o1js-benchmarks\")\n  |> range(start: v.timeRangeStart, stop: v.timeRangeStop)\n  |> filter(fn: (r) => r[\"_measurement\"] =~ /^ecdsa - build constraint system - \\d+ samples$/ or r[\"_measurement\"] =~ /^ecdsa - witness generation - \\d+ samples$/)\n  |> filter(fn: (r) => r[\"_field\"] == \"build constraint system - upperBound\")\n  |> filter(fn: (r) => r[\"benchmarkName\"] =~ /^${benchmarkFilterQuery:regex}$/)\n  |> filter(fn: (r) => r[\"sourceEnvironment\"] =~ /^${sourceEnvironmentFilterQuery:regex}$/)\n  |> filter(fn: (r) => r[\"operatingSystem\"] =~ /^${operatingSystemFilterQuery:regex}$/)\n  |> filter(fn: (r) => r[\"hardware\"] =~ /^${hardwareFilterQuery:regex}$/)\n  |> filter(fn: (r) => r[\"gitBranch\"] =~ /^${gitBranchFilterQuery:regex}$/)\n  |> filter(fn: (r) => r[\"sampledTimes\"] =~ /^${sampledTimesFilterQuery:regex}$/)\n  |> aggregateWindow(every: v.windowPeriod, fn: max, createEmpty: false)\n  |> yield(name: \"buildConstraintSystemUpperBoundMax\")\n\nfrom(bucket: \"o1js-benchmarks\")\n  |> range(start: v.timeRangeStart, stop: v.timeRangeStop)\n  |> filter(fn: (r) => r[\"_measurement\"] =~ /^ecdsa - build constraint system - \\d+ samples$/ or r[\"_measurement\"] =~ /^ecdsa - witness generation - \\d+ samples$/)\n  |> filter(fn: (r) => r[\"_field\"] == \"build constraint system - lowerBound\")\n  |> filter(fn: (r) => r[\"benchmarkName\"] =~ /^${benchmarkFilterQuery:regex}$/)\n  |> filter(fn: (r) => r[\"sourceEnvironment\"] =~ /^${sourceEnvironmentFilterQuery:regex}$/)\n  |> filter(fn: (r) => r[\"operatingSystem\"] =~ /^${operatingSystemFilterQuery:regex}$/)\n  |> filter(fn: (r) => r[\"hardware\"] =~ /^${hardwareFilterQuery:regex}$/)\n  |> filter(fn: (r) => r[\"gitBranch\"] =~ /^${gitBranchFilterQuery:regex}$/)\n  |> filter(fn: (r) => r[\"sampledTimes\"] =~ /^${sampledTimesFilterQuery:regex}$/)\n  |> aggregateWindow(every: v.windowPeriod, fn: min, createEmpty: false)\n  |> yield(name: \"buildConstraintSystemLowerBoundMin\")\n\nfrom(bucket: \"o1js-benchmarks\")\n  |> range(start: v.timeRangeStart, stop: v.timeRangeStop)\n  |> filter(fn: (r) => r[\"_measurement\"] =~ /^ecdsa - build constraint system - \\d+ samples$/ or r[\"_measurement\"] =~ /^ecdsa - witness generation - \\d+ samples$/)\n  |> filter(fn: (r) => r[\"_field\"] == \"witness generation - upperBound\")\n  |> filter(fn: (r) => r[\"benchmarkName\"] =~ /^${benchmarkFilterQuery:regex}$/)\n  |> filter(fn: (r) => r[\"sourceEnvironment\"] =~ /^${sourceEnvironmentFilterQuery:regex}$/)\n  |> filter(fn: (r) => r[\"operatingSystem\"] =~ /^${operatingSystemFilterQuery:regex}$/)\n  |> filter(fn: (r) => r[\"hardware\"] =~ /^${hardwareFilterQuery:regex}$/)\n  |> filter(fn: (r) => r[\"gitBranch\"] =~ /^${gitBranchFilterQuery:regex}$/)\n  |> filter(fn: (r) => r[\"sampledTimes\"] =~ /^${sampledTimesFilterQuery:regex}$/)\n  |> aggregateWindow(every: v.windowPeriod, fn: max, createEmpty: false)\n  |> yield(name: \"witnessGenerationUpperBoundMax\")\n\nfrom(bucket: \"o1js-benchmarks\")\n  |> range(start: v.timeRangeStart, stop: v.timeRangeStop)\n  |> filter(fn: (r) => r[\"_measurement\"] =~ /^ecdsa - build constraint system - \\d+ samples$/ or r[\"_measurement\"] =~ /^ecdsa - witness generation - \\d+ samples$/)\n  |> filter(fn: (r) => r[\"_field\"] == \"witness generation - lowerBound\")\n  |> filter(fn: (r) => r[\"benchmarkName\"] =~ /^${benchmarkFilterQuery:regex}$/)\n  |> filter(fn: (r) => r[\"sourceEnvironment\"] =~ /^${sourceEnvironmentFilterQuery:regex}$/)\n  |> filter(fn: (r) => r[\"operatingSystem\"] =~ /^${operatingSystemFilterQuery:regex}$/)\n  |> filter(fn: (r) => r[\"hardware\"] =~ /^${hardwareFilterQuery:regex}$/)\n  |> filter(fn: (r) => r[\"gitBranch\"] =~ /^${gitBranchFilterQuery:regex}$/)\n  |> filter(fn: (r) => r[\"sampledTimes\"] =~ /^${sampledTimesFilterQuery:regex}$/)\n  |> aggregateWindow(every: v.windowPeriod, fn: min, createEmpty: false)\n  |> yield(name: \"witnessGenerationLowerBoundMin\")",
           "refId": "A",
           "resultFormat": "time_series",
           "select": [
@@ -252,7 +447,7 @@
       },
       {
         "current": {
-          "selected": true,
+          "selected": false,
           "text": ["All"],
           "value": ["$__all"]
         },
@@ -277,7 +472,7 @@
       },
       {
         "current": {
-          "selected": true,
+          "selected": false,
           "text": ["All"],
           "value": ["$__all"]
         },
@@ -302,7 +497,7 @@
       },
       {
         "current": {
-          "selected": true,
+          "selected": false,
           "text": ["All"],
           "value": ["$__all"]
         },
@@ -327,7 +522,7 @@
       },
       {
         "current": {
-          "selected": true,
+          "selected": false,
           "text": ["All"],
           "value": ["$__all"]
         },
@@ -360,6 +555,6 @@
   "timezone": "browser",
   "title": "o1js benchmarks",
   "uid": "adffpubsh4zy8e",
-  "version": 7,
+  "version": 16,
   "weekStart": "monday"
 }
