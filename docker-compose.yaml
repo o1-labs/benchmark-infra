@@ -81,6 +81,8 @@ services:
       - "./deployment/grafana/:/etc/grafana/provisioning"
       - "/etc/localtime:/etc/localtime:ro"
     environment:
+      # Disable Grafana's internal metrics available at /metrics
+      GF_METRICS_ENABLED: false
       GF_AUTH_DISABLE_LOGIN_FORM: 0
       GF_AUTH_ANONYMOUS_ENABLED: 1
       GF_AUTH_BASIC_ENABLED: 0
