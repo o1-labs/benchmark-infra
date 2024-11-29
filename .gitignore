@@ -15,7 +15,7 @@
 # Dotenv environment variables file
 .env
 
-# Gnerated files and folders
+# Generated files and folders
 letsencrypt
 influxdb-data
 influxdb-config
