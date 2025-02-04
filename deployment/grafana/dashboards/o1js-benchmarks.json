@@ -1901,7 +1901,7 @@
       "type": "gauge"
     }
   ],
-  "refresh": "10s",
+  "refresh": "30s",
   "revision": 1,
   "schemaVersion": 39,
   "tags": [],
@@ -1935,7 +1935,7 @@
       {
         "allValue": "",
         "current": {
-          "selected": false,
+          "selected": true,
           "text": ["All"],
           "value": ["$__all"]
         },
@@ -1960,7 +1960,7 @@
       },
       {
         "current": {
-          "selected": false,
+          "selected": true,
           "text": ["All"],
           "value": ["$__all"]
         },
@@ -1985,7 +1985,7 @@
       },
       {
         "current": {
-          "selected": false,
+          "selected": true,
           "text": ["All"],
           "value": ["$__all"]
         },
@@ -2010,7 +2010,7 @@
       },
       {
         "current": {
-          "selected": false,
+          "selected": true,
           "text": ["All"],
           "value": ["$__all"]
         },
@@ -2035,7 +2035,7 @@
       },
       {
         "current": {
-          "selected": false,
+          "selected": true,
           "text": ["All"],
           "value": ["$__all"]
         },
@@ -2061,13 +2061,13 @@
     ]
   },
   "time": {
-    "from": "now-3h",
+    "from": "now-7d",
     "to": "now"
   },
   "timepicker": {},
   "timezone": "browser",
   "title": "o1js benchmarks",
   "uid": "adffpubsh4zy8e",
-  "version": 21,
+  "version": 2,
   "weekStart": "monday"
 }
