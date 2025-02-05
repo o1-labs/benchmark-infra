@@ -102,7 +102,7 @@
       "id": 57,
       "options": {
         "legend": {
-          "calcs": ["mean"],
+          "calcs": ["min", "mean", "max"],
           "displayMode": "list",
           "placement": "bottom",
           "showLegend": true
@@ -199,7 +199,7 @@
       "id": 55,
       "options": {
         "legend": {
-          "calcs": ["mean"],
+          "calcs": ["min", "mean", "max"],
           "displayMode": "list",
           "placement": "bottom",
           "showLegend": true
@@ -215,7 +215,7 @@
             "type": "influxdb",
             "uid": "febc5uy7o2680f"
           },
-          "query": "from(bucket: \"mina-benchmarks\")\n  |> range(start: v.timeRangeStart, stop: v.timeRangeStop)\n  |> filter(fn: (r) => r[\"category\"] =~ /^ledger-export$/)\n  |> filter(fn: (r) => r[\"_field\"] =~ /^${fieldFilterQuery:regex}$/)\n  |> filter(fn: (r) => r[\"_measurement\"] =~ /^${measurementFilterQuery:regex}$/)\n  |> filter(fn: (r) => r[\"gitbranch\"] =~ /^${gitbranchFilterQuery:regex}$/)\n  |> aggregateWindow(every: v.windowPeriod, fn: mean, createEmpty: false)\n  |> yield(name: \"mean\")\n",
+          "query": "from(bucket: \"mina-benchmarks\")\n  |> range(start: v.timeRangeStart, stop: v.timeRangeStop)\n  |> filter(fn: (r) => r[\"category\"] =~ /^ledger-export$/)\n  |> filter(fn: (r) => r[\"_field\"] =~ /^${fieldFilterQuery:regex}$/)\n  |> filter(fn: (r) => r[\"_measurement\"] =~ /^${measurementFilterQuery:regex}$/)\n  |> filter(fn: (r) => r[\"gitbranch\"] =~ /^${gitbranchFilterQuery:regex}$/)\n  //|> group(columns: [\"_field\", \"gitbranch\"])\n  |> aggregateWindow(every: v.windowPeriod, fn: mean, createEmpty: false)\n  |> yield(name: \"mean\")\n",
           "refId": "A"
         }
       ],
@@ -290,7 +290,7 @@
       "id": 56,
       "options": {
         "legend": {
-          "calcs": ["mean"],
+          "calcs": ["min", "mean", "max"],
           "displayMode": "list",
           "placement": "bottom",
           "showLegend": true
@@ -307,7 +307,7 @@
             "type": "influxdb",
             "uid": "febc5uy7o2680f"
           },
-          "query": "from(bucket: \"mina-benchmarks\")\n  |> range(start: v.timeRangeStart, stop: v.timeRangeStop)\n  |> filter(fn: (r) => r[\"category\"] =~ /^snark$/)\n  |> filter(fn: (r) => r[\"_field\"] =~ /^${fieldFilterQuery:regex}$/)\n  |> filter(fn: (r) => r[\"_measurement\"] =~ /^${measurementFilterQuery:regex}$/)\n  |> filter(fn: (r) => r[\"gitbranch\"] =~ /^${gitbranchFilterQuery:regex}$/)\n  |> aggregateWindow(every: v.windowPeriod, fn: mean, createEmpty: false)\n  |> yield(name: \"mean\")\n",
+          "query": "from(bucket: \"mina-benchmarks\")\n  |> range(start: v.timeRangeStart, stop: v.timeRangeStop)\n  |> filter(fn: (r) => r[\"category\"] =~ /^snark$/)\n  |> filter(fn: (r) => r[\"_field\"] =~ /^${fieldFilterQuery:regex}$/)\n  |> filter(fn: (r) => r[\"_measurement\"] =~ /^${measurementFilterQuery:regex}$/)\n  |> filter(fn: (r) => r[\"gitbranch\"] =~ /^${gitbranchFilterQuery:regex}$/)\n  |> group(columns: [\"_field\", \"gitbranch\"])\n  |> aggregateWindow(every: v.windowPeriod, fn: mean, createEmpty: false)\n  |> yield(name: \"mean\")\n",
           "refId": "A"
         }
       ],
@@ -387,7 +387,7 @@
       "id": 54,
       "options": {
         "legend": {
-          "calcs": ["mean"],
+          "calcs": ["min", "mean", "max"],
           "displayMode": "list",
           "placement": "bottom",
           "showLegend": true
@@ -403,7 +403,7 @@
             "type": "influxdb",
             "uid": "febc5uy7o2680f"
           },
-          "query": "from(bucket: \"mina-benchmarks\")\n  |> range(start: v.timeRangeStart, stop: v.timeRangeStop)\n  |> filter(fn: (r) => r[\"category\"] =~ /^zkapp$/)\n  |> filter(fn: (r) => r[\"_field\"] =~ /^${fieldFilterQuery:regex}$/)\n  |> filter(fn: (r) => r[\"_measurement\"] =~ /^P0S0PS6TA12$/ or r[\"_measurement\"] =~ /^P0S1PS5TA11$/ or r[\"_measurement\"] =~ /^P0S2PS5TA12$/ or r[\"_measurement\"] =~ /^P0S3PS4TA11$/ or r[\"_measurement\"] =~ /^P0S4PS3TA10$/ or r[\"_measurement\"] =~ /^P0S7PS0TA7$/ or r[\"_measurement\"] =~ /^P1S0PS5TA11$/ or r[\"_measurement\"] =~ /^P1S1PS4TA10$/ or r[\"_measurement\"] =~ /^P1S2PS4TA11$/ or r[\"_measurement\"] =~ /^P1S3PS3TA10$/ or r[\"_measurement\"] =~ /^P2S0PS4TA10$/ or r[\"_measurement\"] =~ /^P2S2PS3TA10$/ or r[\"_measurement\"] =~ /^P3S0PS3TA9$/ or r[\"_measurement\"] =~ /^P6S0PS0TA6$/)\n  |> filter(fn: (r) => r[\"gitbranch\"] =~ /^${gitbranchFilterQuery:regex}$/)\n  //|> group(columns: [\"_measurement\"])\n  |> aggregateWindow(every: v.windowPeriod, fn: mean, createEmpty: false)\n  |> yield(name: \"mean\")\n",
+          "query": "from(bucket: \"mina-benchmarks\")\n  |> range(start: v.timeRangeStart, stop: v.timeRangeStop)\n  |> filter(fn: (r) => r[\"category\"] =~ /^zkapp$/)\n  |> filter(fn: (r) => r[\"_field\"] =~ /^${fieldFilterQuery:regex}$/)\n  |> filter(fn: (r) => r[\"_measurement\"] =~ /^${measurementFilterQuery:regex}$/)\n  |> filter(fn: (r) => r[\"gitbranch\"] =~ /^${gitbranchFilterQuery:regex}$/)\n  |> group(columns: [\"_field\", \"gitbranch\"])\n  |> aggregateWindow(every: v.windowPeriod, fn: mean, createEmpty: false)\n  |> yield(name: \"mean\")\n",
           "refId": "A"
         }
       ],
@@ -483,7 +483,7 @@
       "id": 53,
       "options": {
         "legend": {
-          "calcs": ["mean"],
+          "calcs": ["sum"],
           "displayMode": "list",
           "placement": "bottom",
           "showLegend": true
@@ -499,7 +499,7 @@
             "type": "influxdb",
             "uid": "febc5uy7o2680f"
           },
-          "query": "from(bucket: \"mina-benchmarks\")\n  |> range(start: v.timeRangeStart, stop: v.timeRangeStop)\n  |> filter(fn: (r) => r[\"category\"] =~ /^heap_usage$/)\n  |> filter(fn: (r) => r[\"_field\"] == \"bytes\")\n  |> filter(fn: (r) => r[\"_measurement\"] =~ /Account\\.t*/ or r[\"_measurement\"] =~ /Zkapp_command\\.t*/ or r[\"_measurement\"] =~ /Parallel_scan\\.Base\\.t.*zkApp.*/ or r[\"_measurement\"] =~ /^Pickles\\.Side_loaded\\.Proof\\.t/)\n  |> filter(fn: (r) => r[\"gitbranch\"] =~ /^${gitbranchFilterQuery:regex}$/)\n  //|> group(columns: [\"_measurement\"])\n  |> aggregateWindow(every: v.windowPeriod, fn: mean, createEmpty: false)\n  |> yield(name: \"mean\")\n",
+          "query": "from(bucket: \"mina-benchmarks\")\n  |> range(start: v.timeRangeStart, stop: v.timeRangeStop)\n  |> filter(fn: (r) => r[\"category\"] =~ /^heap_usage$/)\n  |> filter(fn: (r) => r[\"_field\"] == \"bytes\")\n  |> filter(fn: (r) => r[\"_measurement\"] =~ /^${measurementFilterQuery:regex}$/)\n  |> filter(fn: (r) => r[\"gitbranch\"] =~ /^${gitbranchFilterQuery:regex}$/)\n  |> group(columns: [\"_measurement\", \"gitbranch\"])\n  |> aggregateWindow(every: v.windowPeriod, fn: mean, createEmpty: false)\n  |> yield(name: \"mean\")\n",
           "refId": "A"
         }
       ],
@@ -3299,6 +3299,6 @@
   "timezone": "browser",
   "title": "Mina benchmarks",
   "uid": "fdwhotur85f5sc",
-  "version": 47,
+  "version": 50,
   "weekStart": ""
 }
