@@ -26,3 +26,21 @@ datasources:
       httpHeaderValue1: ${INFLUXDB_AUTH_HEADER}
       password: ${INFLUXDB_PASSWORD}
       token: ${INFLUXDB_TOKEN}
+  - name: "InfluxDB (mina)"
+    type: influxdb
+    access: proxy
+    database: o1labs
+    isDefault: true
+    editable: true
+    user: admin
+    url: http://influxdb:8086
+    jsonData:
+      version: Flux
+      httpMode: POST
+      httpHeaderName1: "Authorization"
+      organization: ${INFLUXDB_ORG}
+      defaultBucket: "mina-benchmarks"
+    secureJsonData:
+      httpHeaderValue1: ${INFLUXDB_AUTH_HEADER}
+      password: ${INFLUXDB_PASSWORD}
+      token: ${INFLUXDB_TOKEN}
