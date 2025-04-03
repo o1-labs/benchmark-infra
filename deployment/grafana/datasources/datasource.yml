@@ -30,7 +30,7 @@ datasources:
     type: influxdb
     access: proxy
     database: o1labs
-    isDefault: true
+    isDefault: false
     editable: true
     user: admin
     url: http://influxdb:8086
