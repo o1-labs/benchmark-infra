@@ -132,7 +132,7 @@
         {
           "datasource": {
             "type": "influxdb",
-            "uid": "P951FEA4DE68E13C5"
+            "uid": "PA37C35462CC6599F"
           },
           "groupBy": [
             {
@@ -445,7 +445,7 @@
         {
           "datasource": {
             "type": "influxdb",
-            "uid": "P951FEA4DE68E13C5"
+            "uid": "PA37C35462CC6599F"
           },
           "groupBy": [
             {
@@ -934,7 +934,7 @@
         {
           "datasource": {
             "type": "influxdb",
-            "uid": "P951FEA4DE68E13C5"
+            "uid": "PA37C35462CC6599F"
           },
           "groupBy": [
             {
@@ -1247,7 +1247,7 @@
         {
           "datasource": {
             "type": "influxdb",
-            "uid": "P951FEA4DE68E13C5"
+            "uid": "PA37C35462CC6599F"
           },
           "groupBy": [
             {
@@ -1547,7 +1547,7 @@
         {
           "datasource": {
             "type": "influxdb",
-            "uid": "P951FEA4DE68E13C5"
+            "uid": "PA37C35462CC6599F"
           },
           "groupBy": [
             {
@@ -1703,7 +1703,7 @@
         {
           "datasource": {
             "type": "influxdb",
-            "uid": "P951FEA4DE68E13C5"
+            "uid": "PA37C35462CC6599F"
           },
           "groupBy": [
             {
@@ -1917,7 +1917,7 @@
           "type": "influxdb",
           "uid": "PA37C35462CC6599F"
         },
-        "definition": "import \"influxdata/influxdb/schema\"\nschema.tagValues(\n  bucket: \"o1js-benchmarks\",\n  tag: \"benchmarkName\"\n)",
+        "definition": "import \"influxdata/influxdb/schema\"\nschema.tagValues(\n  bucket: \"o1js-benchmarks\",\n  tag: \"benchmarkName\",\n  start: v.timeRangeStart\n)",
         "description": "Benchmark types.",
         "hide": 0,
         "includeAll": true,
@@ -1925,7 +1925,7 @@
         "multi": true,
         "name": "benchmarkFilterQuery",
         "options": [],
-        "query": "import \"influxdata/influxdb/schema\"\nschema.tagValues(\n  bucket: \"o1js-benchmarks\",\n  tag: \"benchmarkName\"\n)",
+        "query": "import \"influxdata/influxdb/schema\"\nschema.tagValues(\n  bucket: \"o1js-benchmarks\",\n  tag: \"benchmarkName\",\n  start: v.timeRangeStart\n)",
         "refresh": 1,
         "regex": "",
         "skipUrlSync": false,
@@ -1943,7 +1943,7 @@
           "type": "influxdb",
           "uid": "PA37C35462CC6599F"
         },
-        "definition": "import \"influxdata/influxdb/schema\"\nschema.tagValues(\n  bucket: \"o1js-benchmarks\",\n  tag: \"sourceEnvironment\"\n)",
+        "definition": "import \"influxdata/influxdb/schema\"\nschema.tagValues(\n  bucket: \"o1js-benchmarks\",\n  tag: \"sourceEnvironment\",\n  start: v.timeRangeStart\n)",
         "description": "Environment settings the benchmarks were executed in.",
         "hide": 0,
         "includeAll": true,
@@ -1951,7 +1951,7 @@
         "multi": true,
         "name": "sourceEnvironmentFilterQuery",
         "options": [],
-        "query": "import \"influxdata/influxdb/schema\"\nschema.tagValues(\n  bucket: \"o1js-benchmarks\",\n  tag: \"sourceEnvironment\"\n)",
+        "query": "import \"influxdata/influxdb/schema\"\nschema.tagValues(\n  bucket: \"o1js-benchmarks\",\n  tag: \"sourceEnvironment\",\n  start: v.timeRangeStart\n)",
         "refresh": 1,
         "regex": "",
         "skipUrlSync": false,
@@ -1968,7 +1968,7 @@
           "type": "influxdb",
           "uid": "PA37C35462CC6599F"
         },
-        "definition": "import \"influxdata/influxdb/schema\"\nschema.tagValues(\n  bucket: \"o1js-benchmarks\",\n  tag: \"operatingSystem\"\n)",
+        "definition": "import \"influxdata/influxdb/schema\"\nschema.tagValues(\n  bucket: \"o1js-benchmarks\",\n  tag: \"operatingSystem\",\n  start: v.timeRangeStart\n)",
         "description": "Operating system utilized during the benchmarks execution.",
         "hide": 0,
         "includeAll": true,
@@ -1976,7 +1976,7 @@
         "multi": true,
         "name": "operatingSystemFilterQuery",
         "options": [],
-        "query": "import \"influxdata/influxdb/schema\"\nschema.tagValues(\n  bucket: \"o1js-benchmarks\",\n  tag: \"operatingSystem\"\n)",
+        "query": "import \"influxdata/influxdb/schema\"\nschema.tagValues(\n  bucket: \"o1js-benchmarks\",\n  tag: \"operatingSystem\",\n  start: v.timeRangeStart\n)",
         "refresh": 1,
         "regex": "",
         "skipUrlSync": false,
@@ -1993,7 +1993,7 @@
           "type": "influxdb",
           "uid": "PA37C35462CC6599F"
         },
-        "definition": "import \"influxdata/influxdb/schema\"\nschema.tagValues(\n  bucket: \"o1js-benchmarks\",\n  tag: \"hardware\"\n)",
+        "definition": "import \"influxdata/influxdb/schema\"\nschema.tagValues(\n  bucket: \"o1js-benchmarks\",\n  tag: \"hardware\",\n  start: v.timeRangeStart\n)",
         "description": "CPU and RAM configuration utilized during the benchmarks execution.",
         "hide": 0,
         "includeAll": true,
@@ -2001,7 +2001,7 @@
         "multi": true,
         "name": "hardwareFilterQuery",
         "options": [],
-        "query": "import \"influxdata/influxdb/schema\"\nschema.tagValues(\n  bucket: \"o1js-benchmarks\",\n  tag: \"hardware\"\n)",
+        "query": "import \"influxdata/influxdb/schema\"\nschema.tagValues(\n  bucket: \"o1js-benchmarks\",\n  tag: \"hardware\",\n  start: v.timeRangeStart\n)",
         "refresh": 1,
         "regex": "",
         "skipUrlSync": false,
@@ -2018,7 +2018,7 @@
           "type": "influxdb",
           "uid": "PA37C35462CC6599F"
         },
-        "definition": "import \"influxdata/influxdb/schema\"\nschema.tagValues(\n  bucket: \"o1js-benchmarks\",\n  tag: \"gitBranch\"\n)",
+        "definition": "import \"influxdata/influxdb/schema\"\nschema.tagValues(\n  bucket: \"o1js-benchmarks\",\n  tag: \"gitBranch\",\n  start: v.timeRangeStart\n)",
         "description": "Git branch from which the benchmarks were executed.",
         "hide": 0,
         "includeAll": true,
@@ -2026,7 +2026,7 @@
         "multi": true,
         "name": "gitBranchFilterQuery",
         "options": [],
-        "query": "import \"influxdata/influxdb/schema\"\nschema.tagValues(\n  bucket: \"o1js-benchmarks\",\n  tag: \"gitBranch\"\n)",
+        "query": "import \"influxdata/influxdb/schema\"\nschema.tagValues(\n  bucket: \"o1js-benchmarks\",\n  tag: \"gitBranch\",\n  start: v.timeRangeStart\n)",
         "refresh": 1,
         "regex": "",
         "skipUrlSync": false,
@@ -2043,7 +2043,7 @@
           "type": "influxdb",
           "uid": "PA37C35462CC6599F"
         },
-        "definition": "import \"influxdata/influxdb/schema\"\nschema.tagValues(\n  bucket: \"o1js-benchmarks\",\n  tag: \"sampledTimes\"\n)",
+        "definition": "import \"influxdata/influxdb/schema\"\nschema.tagValues(\n  bucket: \"o1js-benchmarks\",\n  tag: \"sampledTimes\",\n  start: v.timeRangeStart\n)",
         "description": "Number of benchmarks performed prior to computing the 'mean', which is subsequently saved in storage.",
         "hide": 0,
         "includeAll": true,
@@ -2051,7 +2051,7 @@
         "multi": true,
         "name": "sampledTimesFilterQuery",
         "options": [],
-        "query": "import \"influxdata/influxdb/schema\"\nschema.tagValues(\n  bucket: \"o1js-benchmarks\",\n  tag: \"sampledTimes\"\n)",
+        "query": "import \"influxdata/influxdb/schema\"\nschema.tagValues(\n  bucket: \"o1js-benchmarks\",\n  tag: \"sampledTimes\",\n  start: v.timeRangeStart\n)",
         "refresh": 1,
         "regex": "",
         "skipUrlSync": false,
