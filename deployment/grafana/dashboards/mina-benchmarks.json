@@ -37,7 +37,7 @@
     {
       "datasource": {
         "type": "influxdb",
-        "uid": "febc5uy7o2680f"
+        "uid": "P81B2C7F097038F1D"
       },
       "fieldConfig": {
         "defaults": {
@@ -117,7 +117,7 @@
         {
           "datasource": {
             "type": "influxdb",
-            "uid": "febc5uy7o2680f"
+            "uid": "P81B2C7F097038F1D"
           },
           "query": "from(bucket: \"mina-benchmarks\")\n  |> range(start: v.timeRangeStart, stop: v.timeRangeStop)\n  |> filter(fn: (r) => r[\"category\"] =~ /^mina-base$/)\n  |> filter(fn: (r) => r[\"_field\"] =~ /^${fieldFilterQuery:regex}$/)\n  |> filter(fn: (r) => r[\"_measurement\"] =~ /^${measurementFilterQuery:regex}$/)\n  |> filter(fn: (r) => r[\"gitbranch\"] =~ /^${gitbranchFilterQuery:regex}$/)\n  |> aggregateWindow(every: v.windowPeriod, fn: mean, createEmpty: false)\n  |> yield(name: \"mean\")\n",
           "refId": "A"
@@ -129,7 +129,7 @@
     {
       "datasource": {
         "type": "influxdb",
-        "uid": "febc5uy7o2680f"
+        "uid": "P81B2C7F097038F1D"
       },
       "description": "",
       "fieldConfig": {
@@ -213,7 +213,7 @@
         {
           "datasource": {
             "type": "influxdb",
-            "uid": "febc5uy7o2680f"
+            "uid": "P81B2C7F097038F1D"
           },
           "query": "from(bucket: \"mina-benchmarks\")\n  |> range(start: v.timeRangeStart, stop: v.timeRangeStop)\n  |> filter(fn: (r) => r[\"category\"] =~ /^ledger-export$/)\n  |> filter(fn: (r) => r[\"_field\"] =~ /^${fieldFilterQuery:regex}$/)\n  |> filter(fn: (r) => r[\"_measurement\"] =~ /^${measurementFilterQuery:regex}$/)\n  |> filter(fn: (r) => r[\"gitbranch\"] =~ /^${gitbranchFilterQuery:regex}$/)\n  //|> group(columns: [\"_field\", \"gitbranch\"])\n  |> aggregateWindow(every: v.windowPeriod, fn: mean, createEmpty: false)\n  |> yield(name: \"mean\")\n",
           "refId": "A"
@@ -225,7 +225,7 @@
     {
       "datasource": {
         "type": "influxdb",
-        "uid": "febc5uy7o2680f"
+        "uid": "P81B2C7F097038F1D"
       },
       "fieldConfig": {
         "defaults": {
@@ -305,7 +305,7 @@
         {
           "datasource": {
             "type": "influxdb",
-            "uid": "febc5uy7o2680f"
+            "uid": "P81B2C7F097038F1D"
           },
           "query": "from(bucket: \"mina-benchmarks\")\n  |> range(start: v.timeRangeStart, stop: v.timeRangeStop)\n  |> filter(fn: (r) => r[\"category\"] =~ /^snark$/)\n  |> filter(fn: (r) => r[\"_field\"] =~ /^${fieldFilterQuery:regex}$/)\n  |> filter(fn: (r) => r[\"_measurement\"] =~ /^${measurementFilterQuery:regex}$/)\n  |> filter(fn: (r) => r[\"gitbranch\"] =~ /^${gitbranchFilterQuery:regex}$/)\n  |> group(columns: [\"_field\", \"gitbranch\"])\n  |> aggregateWindow(every: v.windowPeriod, fn: mean, createEmpty: false)\n  |> yield(name: \"mean\")\n",
           "refId": "A"
@@ -317,7 +317,7 @@
     {
       "datasource": {
         "type": "influxdb",
-        "uid": "febc5uy7o2680f"
+        "uid": "P81B2C7F097038F1D"
       },
       "description": "",
       "fieldConfig": {
@@ -401,7 +401,7 @@
         {
           "datasource": {
             "type": "influxdb",
-            "uid": "febc5uy7o2680f"
+            "uid": "P81B2C7F097038F1D"
           },
           "query": "from(bucket: \"mina-benchmarks\")\n  |> range(start: v.timeRangeStart, stop: v.timeRangeStop)\n  |> filter(fn: (r) => r[\"category\"] =~ /^zkapp$/)\n  |> filter(fn: (r) => r[\"_field\"] =~ /^${fieldFilterQuery:regex}$/)\n  |> filter(fn: (r) => r[\"_measurement\"] =~ /^${measurementFilterQuery:regex}$/)\n  |> filter(fn: (r) => r[\"gitbranch\"] =~ /^${gitbranchFilterQuery:regex}$/)\n  |> group(columns: [\"_field\", \"gitbranch\"])\n  |> aggregateWindow(every: v.windowPeriod, fn: mean, createEmpty: false)\n  |> yield(name: \"mean\")\n",
           "refId": "A"
@@ -413,7 +413,7 @@
     {
       "datasource": {
         "type": "influxdb",
-        "uid": "febc5uy7o2680f"
+        "uid": "P81B2C7F097038F1D"
       },
       "description": "",
       "fieldConfig": {
@@ -497,7 +497,7 @@
         {
           "datasource": {
             "type": "influxdb",
-            "uid": "febc5uy7o2680f"
+            "uid": "P81B2C7F097038F1D"
           },
           "query": "from(bucket: \"mina-benchmarks\")\n  |> range(start: v.timeRangeStart, stop: v.timeRangeStop)\n  |> filter(fn: (r) => r[\"category\"] =~ /^heap_usage$/)\n  |> filter(fn: (r) => r[\"_field\"] == \"bytes\")\n  |> filter(fn: (r) => r[\"_measurement\"] =~ /^${measurementFilterQuery:regex}$/)\n  |> filter(fn: (r) => r[\"gitbranch\"] =~ /^${gitbranchFilterQuery:regex}$/)\n  |> group(columns: [\"_measurement\", \"gitbranch\"])\n  |> aggregateWindow(every: v.windowPeriod, fn: mean, createEmpty: false)\n  |> yield(name: \"mean\")\n",
           "refId": "A"
@@ -519,7 +519,7 @@
         {
           "datasource": {
             "type": "influxdb",
-            "uid": "febc5uy7o2680f"
+            "uid": "P81B2C7F097038F1D"
           },
           "fieldConfig": {
             "defaults": {
@@ -598,7 +598,7 @@
             {
               "datasource": {
                 "type": "influxdb",
-                "uid": "febc5uy7o2680f"
+                "uid": "P81B2C7F097038F1D"
               },
               "query": "from(bucket: \"mina-benchmarks\")\n  |> range(start: v.timeRangeStart, stop: v.timeRangeStop)\n  |> filter(fn: (r) => r[\"category\"] =~ /^mina-base$/)\n  |> filter(fn: (r) => r[\"_field\"] =~ /^${fieldFilterQuery:regex}$/)\n  |> filter(fn: (r) => r[\"gitbranch\"] =~ /^compatible$/)\n  |> filter(fn: (r) => r._measurement =~ /Ledger_hash\\.merge.*/ )\n  |> group(columns: [\"_field\"])\n  |> aggregateWindow(every: v.windowPeriod, fn: mean, createEmpty: false)\n  |> yield(name: \"mean\")\n",
               "refId": "A"
@@ -610,7 +610,7 @@
         {
           "datasource": {
             "type": "influxdb",
-            "uid": "febc5uy7o2680f"
+            "uid": "P81B2C7F097038F1D"
           },
           "fieldConfig": {
             "defaults": {
@@ -689,7 +689,7 @@
             {
               "datasource": {
                 "type": "influxdb",
-                "uid": "febc5uy7o2680f"
+                "uid": "P81B2C7F097038F1D"
               },
               "query": "from(bucket: \"mina-benchmarks\")\n  |> range(start: v.timeRangeStart, stop: v.timeRangeStop)\n  |> filter(fn: (r) => r[\"category\"] =~ /^mina-base$/)\n  |> filter(fn: (r) => r[\"_field\"] =~ /^${fieldFilterQuery:regex}$/)\n  |> filter(fn: (r) => r[\"gitbranch\"] =~ /^develop$/)\n  |> filter(fn: (r) => r._measurement =~ /Ledger_hash\\.merge.*/ )\n  |> group(columns: [\"_field\"])\n  |> aggregateWindow(every: v.windowPeriod, fn: mean, createEmpty: false)\n  |> yield(name: \"mean\")\n",
               "refId": "A"
@@ -701,7 +701,7 @@
         {
           "datasource": {
             "type": "influxdb",
-            "uid": "febc5uy7o2680f"
+            "uid": "P81B2C7F097038F1D"
           },
           "fieldConfig": {
             "defaults": {
@@ -780,7 +780,7 @@
             {
               "datasource": {
                 "type": "influxdb",
-                "uid": "febc5uy7o2680f"
+                "uid": "P81B2C7F097038F1D"
               },
               "hide": false,
               "query": "from(bucket: \"mina-benchmarks\")\n  |> range(start: v.timeRangeStart, stop: v.timeRangeStop)\n  |> filter(fn: (r) => r[\"category\"] =~ /^mina-base$/)\n  |> filter(fn: (r) => r[\"_field\"] =~ /^${fieldFilterQuery:regex}$/)\n  |> filter(fn: (r) => r[\"gitbranch\"] =~ /^compatible$/)\n  |> filter(fn: (r) => r._measurement =~ /^vrf eval checked$/)\n  |> group(columns: [\"_field\"])\n  |> aggregateWindow(every: v.windowPeriod, fn: mean, createEmpty: false)\n  |> yield(name: \"mean\")\n",
@@ -793,7 +793,7 @@
         {
           "datasource": {
             "type": "influxdb",
-            "uid": "febc5uy7o2680f"
+            "uid": "P81B2C7F097038F1D"
           },
           "fieldConfig": {
             "defaults": {
@@ -872,7 +872,7 @@
             {
               "datasource": {
                 "type": "influxdb",
-                "uid": "febc5uy7o2680f"
+                "uid": "P81B2C7F097038F1D"
               },
               "hide": false,
               "query": "from(bucket: \"mina-benchmarks\")\n  |> range(start: v.timeRangeStart, stop: v.timeRangeStop)\n  |> filter(fn: (r) => r[\"category\"] =~ /^mina-base$/)\n  |> filter(fn: (r) => r[\"_field\"] =~ /^${fieldFilterQuery:regex}$/)\n  |> filter(fn: (r) => r[\"gitbranch\"] =~ /^develop$/)\n  |> filter(fn: (r) => r._measurement =~ /^vrf eval checked$/)\n  |> group(columns: [\"_field\"])\n  |> aggregateWindow(every: v.windowPeriod, fn: mean, createEmpty: false)\n  |> yield(name: \"mean\")\n",
@@ -885,7 +885,7 @@
         {
           "datasource": {
             "type": "influxdb",
-            "uid": "febc5uy7o2680f"
+            "uid": "P81B2C7F097038F1D"
           },
           "fieldConfig": {
             "defaults": {
@@ -964,7 +964,7 @@
             {
               "datasource": {
                 "type": "influxdb",
-                "uid": "febc5uy7o2680f"
+                "uid": "P81B2C7F097038F1D"
               },
               "hide": false,
               "query": "from(bucket: \"mina-benchmarks\")\n  |> range(start: v.timeRangeStart, stop: v.timeRangeStop)\n  |> filter(fn: (r) => r[\"category\"] =~ /^mina-base$/)\n  |> filter(fn: (r) => r[\"_field\"] =~ /^${fieldFilterQuery:regex}$/)\n  |> filter(fn: (r) => r[\"gitbranch\"] =~ /^compatible$/)\n  |> filter(fn: (r) => r._measurement =~ /^vrf eval unchecked$/)\n  |> group(columns: [\"_field\"])\n  |> aggregateWindow(every: v.windowPeriod, fn: mean, createEmpty: false)\n  |> yield(name: \"mean\")\n",
@@ -977,7 +977,7 @@
         {
           "datasource": {
             "type": "influxdb",
-            "uid": "febc5uy7o2680f"
+            "uid": "P81B2C7F097038F1D"
           },
           "fieldConfig": {
             "defaults": {
@@ -1056,7 +1056,7 @@
             {
               "datasource": {
                 "type": "influxdb",
-                "uid": "febc5uy7o2680f"
+                "uid": "P81B2C7F097038F1D"
               },
               "hide": false,
               "query": "from(bucket: \"mina-benchmarks\")\n  |> range(start: v.timeRangeStart, stop: v.timeRangeStop)\n  |> filter(fn: (r) => r[\"category\"] =~ /^mina-base$/)\n  |> filter(fn: (r) => r[\"_field\"] =~ /^${fieldFilterQuery:regex}$/)\n  |> filter(fn: (r) => r[\"gitbranch\"] =~ /^develop$/)\n  |> filter(fn: (r) => r._measurement =~ /^vrf eval unchecked$/)\n  |> group(columns: [\"_field\"])\n  |> aggregateWindow(every: v.windowPeriod, fn: mean, createEmpty: false)\n  |> yield(name: \"mean\")\n",
@@ -1083,7 +1083,7 @@
         {
           "datasource": {
             "type": "influxdb",
-            "uid": "febc5uy7o2680f"
+            "uid": "P81B2C7F097038F1D"
           },
           "description": "",
           "fieldConfig": {
@@ -1166,7 +1166,7 @@
             {
               "datasource": {
                 "type": "influxdb",
-                "uid": "febc5uy7o2680f"
+                "uid": "P81B2C7F097038F1D"
               },
               "query": "from(bucket: \"mina-benchmarks\")\n  |> range(start: v.timeRangeStart, stop: v.timeRangeStop)\n  |> filter(fn: (r) => r[\"category\"] =~ /^ledger-export$/)\n  |> filter(fn: (r) => r[\"_field\"] =~ /^${fieldFilterQuery:regex}$/)\n  |> filter(fn: (r) => r[\"gitbranch\"] =~ /^compatible$/)\n  |> filter(fn: (r) => r[\"_measurement\"] =~ /^convert_accounts_for_config$/)\n  |> group(columns: [\"_field\"])\n  |> aggregateWindow(every: v.windowPeriod, fn: mean, createEmpty: false)\n  |> yield(name: \"mean\")\n",
               "refId": "A"
@@ -1178,7 +1178,7 @@
         {
           "datasource": {
             "type": "influxdb",
-            "uid": "febc5uy7o2680f"
+            "uid": "P81B2C7F097038F1D"
           },
           "description": "",
           "fieldConfig": {
@@ -1261,7 +1261,7 @@
             {
               "datasource": {
                 "type": "influxdb",
-                "uid": "febc5uy7o2680f"
+                "uid": "P81B2C7F097038F1D"
               },
               "query": "from(bucket: \"mina-benchmarks\")\n  |> range(start: v.timeRangeStart, stop: v.timeRangeStop)\n  |> filter(fn: (r) => r[\"category\"] =~ /^ledger-export$/)\n  |> filter(fn: (r) => r[\"_field\"] =~ /^${fieldFilterQuery:regex}$/)\n  |> filter(fn: (r) => r[\"gitbranch\"] =~ /^develop$/)\n  |> filter(fn: (r) => r[\"_measurement\"] =~ /^convert_accounts_for_config$/)\n  |> group(columns: [\"_field\"])\n  |> aggregateWindow(every: v.windowPeriod, fn: mean, createEmpty: false)\n  |> yield(name: \"mean\")\n",
               "refId": "A"
@@ -1273,7 +1273,7 @@
         {
           "datasource": {
             "type": "influxdb",
-            "uid": "febc5uy7o2680f"
+            "uid": "P81B2C7F097038F1D"
           },
           "description": "",
           "fieldConfig": {
@@ -1356,7 +1356,7 @@
             {
               "datasource": {
                 "type": "influxdb",
-                "uid": "febc5uy7o2680f"
+                "uid": "P81B2C7F097038F1D"
               },
               "query": "from(bucket: \"mina-benchmarks\")\n  |> range(start: v.timeRangeStart, stop: v.timeRangeStop)\n  |> filter(fn: (r) => r[\"category\"] =~ /^ledger-export$/)\n  |> filter(fn: (r) => r[\"_field\"] =~ /^${fieldFilterQuery:regex}$/)\n  |> filter(fn: (r) => r[\"gitbranch\"] =~ /^compatible$/)\n  |> filter(fn: (r) => r[\"_measurement\"] =~ /^parse_runtime_config$/)\n  |> group(columns: [\"_field\"])\n  |> aggregateWindow(every: v.windowPeriod, fn: mean, createEmpty: false)\n  |> yield(name: \"mean\")\n",
               "refId": "A"
@@ -1368,7 +1368,7 @@
         {
           "datasource": {
             "type": "influxdb",
-            "uid": "febc5uy7o2680f"
+            "uid": "P81B2C7F097038F1D"
           },
           "description": "",
           "fieldConfig": {
@@ -1451,7 +1451,7 @@
             {
               "datasource": {
                 "type": "influxdb",
-                "uid": "febc5uy7o2680f"
+                "uid": "P81B2C7F097038F1D"
               },
               "query": "from(bucket: \"mina-benchmarks\")\n  |> range(start: v.timeRangeStart, stop: v.timeRangeStop)\n  |> filter(fn: (r) => r[\"category\"] =~ /^ledger-export$/)\n  |> filter(fn: (r) => r[\"_field\"] =~ /^${fieldFilterQuery:regex}$/)\n  |> filter(fn: (r) => r[\"gitbranch\"] =~ /^develop$/)\n  |> filter(fn: (r) => r[\"_measurement\"] =~ /^parse_runtime_config$/)\n  |> group(columns: [\"_field\"])\n  |> aggregateWindow(every: v.windowPeriod, fn: mean, createEmpty: false)\n  |> yield(name: \"mean\")\n",
               "refId": "A"
@@ -1463,7 +1463,7 @@
         {
           "datasource": {
             "type": "influxdb",
-            "uid": "febc5uy7o2680f"
+            "uid": "P81B2C7F097038F1D"
           },
           "description": "",
           "fieldConfig": {
@@ -1546,7 +1546,7 @@
             {
               "datasource": {
                 "type": "influxdb",
-                "uid": "febc5uy7o2680f"
+                "uid": "P81B2C7F097038F1D"
               },
               "query": "from(bucket: \"mina-benchmarks\")\n  |> range(start: v.timeRangeStart, stop: v.timeRangeStop)\n  |> filter(fn: (r) => r[\"category\"] =~ /^ledger-export$/)\n  |> filter(fn: (r) => r[\"_field\"] =~ /^${fieldFilterQuery:regex}$/)\n  |> filter(fn: (r) => r[\"gitbranch\"] =~ /^compatible$/)\n  |> filter(fn: (r) => r[\"_measurement\"] =~ /^serialize_runtime_config$/)\n  |> group(columns: [\"_field\"])\n  |> aggregateWindow(every: v.windowPeriod, fn: mean, createEmpty: false)\n  |> yield(name: \"mean\")\n",
               "refId": "A"
@@ -1558,7 +1558,7 @@
         {
           "datasource": {
             "type": "influxdb",
-            "uid": "febc5uy7o2680f"
+            "uid": "P81B2C7F097038F1D"
           },
           "description": "",
           "fieldConfig": {
@@ -1641,7 +1641,7 @@
             {
               "datasource": {
                 "type": "influxdb",
-                "uid": "febc5uy7o2680f"
+                "uid": "P81B2C7F097038F1D"
               },
               "query": "from(bucket: \"mina-benchmarks\")\n  |> range(start: v.timeRangeStart, stop: v.timeRangeStop)\n  |> filter(fn: (r) => r[\"category\"] =~ /^ledger-export$/)\n  |> filter(fn: (r) => r[\"_field\"] =~ /^${fieldFilterQuery:regex}$/)\n  |> filter(fn: (r) => r[\"gitbranch\"] =~ /^develop$/)\n  |> filter(fn: (r) => r[\"_measurement\"] =~ /^serialize_runtime_config$/)\n  |> group(columns: [\"_field\"])\n  |> aggregateWindow(every: v.windowPeriod, fn: mean, createEmpty: false)\n  |> yield(name: \"mean\")\n",
               "refId": "A"
@@ -1667,7 +1667,7 @@
         {
           "datasource": {
             "type": "influxdb",
-            "uid": "febc5uy7o2680f"
+            "uid": "P81B2C7F097038F1D"
           },
           "fieldConfig": {
             "defaults": {
@@ -1746,7 +1746,7 @@
             {
               "datasource": {
                 "type": "influxdb",
-                "uid": "febc5uy7o2680f"
+                "uid": "P81B2C7F097038F1D"
               },
               "query": "from(bucket: \"mina-benchmarks\")\n  |> range(start: v.timeRangeStart, stop: v.timeRangeStop)\n  |> filter(fn: (r) => r[\"category\"] =~ /^snark$/)\n  |> filter(fn: (r) => r[\"_field\"] =~ /^${fieldFilterQuery:regex}$/)\n  |> filter(fn: (r) => r[\"gitbranch\"] =~ /^compatible$/)\n  |> filter(fn: (r) => r[\"_measurement\"] =~ /^${measurementFilterQuery:regex}$/)\n  //|> group(columns: [\"_measurement\"])\n  |> aggregateWindow(every: v.windowPeriod, fn: mean, createEmpty: false)\n  |> yield(name: \"mean\")\n",
               "refId": "A"
@@ -1758,7 +1758,7 @@
         {
           "datasource": {
             "type": "influxdb",
-            "uid": "febc5uy7o2680f"
+            "uid": "P81B2C7F097038F1D"
           },
           "fieldConfig": {
             "defaults": {
@@ -1837,7 +1837,7 @@
             {
               "datasource": {
                 "type": "influxdb",
-                "uid": "febc5uy7o2680f"
+                "uid": "P81B2C7F097038F1D"
               },
               "query": "from(bucket: \"mina-benchmarks\")\n  |> range(start: v.timeRangeStart, stop: v.timeRangeStop)\n  |> filter(fn: (r) => r[\"category\"] =~ /^snark$/)\n  |> filter(fn: (r) => r[\"_field\"] =~ /^${fieldFilterQuery:regex}$/)\n  |> filter(fn: (r) => r[\"gitbranch\"] =~ /^develop$/)\n  |> filter(fn: (r) => r[\"_measurement\"] =~ /^${measurementFilterQuery:regex}$/)\n  //|> group(columns: [\"_measurement\"])\n  |> aggregateWindow(every: v.windowPeriod, fn: mean, createEmpty: false)\n  |> yield(name: \"mean\")\n",
               "refId": "A"
@@ -1863,7 +1863,7 @@
         {
           "datasource": {
             "type": "influxdb",
-            "uid": "febc5uy7o2680f"
+            "uid": "P81B2C7F097038F1D"
           },
           "description": "",
           "fieldConfig": {
@@ -1946,7 +1946,7 @@
             {
               "datasource": {
                 "type": "influxdb",
-                "uid": "febc5uy7o2680f"
+                "uid": "P81B2C7F097038F1D"
               },
               "query": "from(bucket: \"mina-benchmarks\")\n  |> range(start: v.timeRangeStart, stop: v.timeRangeStop)\n  |> filter(fn: (r) => r[\"category\"] =~ /^zkapp$/)\n  |> filter(fn: (r) => r[\"_field\"] == \"total account updates\")\n  |> filter(fn: (r) => r[\"gitbranch\"] =~ /^compatible$/)\n  |> filter(fn: (r) => r[\"_measurement\"] =~ /^${measurementFilterQuery:regex}$/)\n  |> group(columns: [\"_measurement\"])\n  |> aggregateWindow(every: v.windowPeriod, fn: mean, createEmpty: false)\n  |> yield(name: \"mean\")\n",
               "refId": "A"
@@ -1958,7 +1958,7 @@
         {
           "datasource": {
             "type": "influxdb",
-            "uid": "febc5uy7o2680f"
+            "uid": "P81B2C7F097038F1D"
           },
           "description": "",
           "fieldConfig": {
@@ -2041,7 +2041,7 @@
             {
               "datasource": {
                 "type": "influxdb",
-                "uid": "febc5uy7o2680f"
+                "uid": "P81B2C7F097038F1D"
               },
               "query": "from(bucket: \"mina-benchmarks\")\n  |> range(start: v.timeRangeStart, stop: v.timeRangeStop)\n  |> filter(fn: (r) => r[\"category\"] =~ /^zkapp$/)\n  |> filter(fn: (r) => r[\"_field\"] == \"total account updates\")\n  |> filter(fn: (r) => r[\"gitbranch\"] =~ /^develop$/)\n  |> filter(fn: (r) => r[\"_measurement\"] =~ /^${measurementFilterQuery:regex}$/)\n  |> group(columns: [\"_measurement\"])\n  |> aggregateWindow(every: v.windowPeriod, fn: mean, createEmpty: false)\n  |> yield(name: \"mean\")\n",
               "refId": "A"
@@ -2053,7 +2053,7 @@
         {
           "datasource": {
             "type": "influxdb",
-            "uid": "febc5uy7o2680f"
+            "uid": "P81B2C7F097038F1D"
           },
           "description": "",
           "fieldConfig": {
@@ -2136,7 +2136,7 @@
             {
               "datasource": {
                 "type": "influxdb",
-                "uid": "febc5uy7o2680f"
+                "uid": "P81B2C7F097038F1D"
               },
               "query": "from(bucket: \"mina-benchmarks\")\n  |> range(start: v.timeRangeStart, stop: v.timeRangeStop)\n  |> filter(fn: (r) => r[\"category\"] =~ /^zkapp$/)\n  |> filter(fn: (r) => r[\"_field\"] == \"proofs updates\")\n  |> filter(fn: (r) => r[\"gitbranch\"] =~ /^compatible$/)\n  |> filter(fn: (r) => r[\"_measurement\"] =~ /^${measurementFilterQuery:regex}$/)\n  |> group(columns: [\"_measurement\"])\n  |> aggregateWindow(every: v.windowPeriod, fn: mean, createEmpty: false)\n  |> yield(name: \"mean\")\n",
               "refId": "A"
@@ -2148,7 +2148,7 @@
         {
           "datasource": {
             "type": "influxdb",
-            "uid": "febc5uy7o2680f"
+            "uid": "P81B2C7F097038F1D"
           },
           "description": "",
           "fieldConfig": {
@@ -2231,7 +2231,7 @@
             {
               "datasource": {
                 "type": "influxdb",
-                "uid": "febc5uy7o2680f"
+                "uid": "P81B2C7F097038F1D"
               },
               "query": "from(bucket: \"mina-benchmarks\")\n  |> range(start: v.timeRangeStart, stop: v.timeRangeStop)\n  |> filter(fn: (r) => r[\"category\"] =~ /^zkapp$/)\n  |> filter(fn: (r) => r[\"_field\"] == \"proofs updates\")\n  |> filter(fn: (r) => r[\"gitbranch\"] =~ /^develop$/)\n  |> filter(fn: (r) => r[\"_measurement\"] =~ /^${measurementFilterQuery:regex}$/)\n  |> group(columns: [\"_measurement\"])\n  |> aggregateWindow(every: v.windowPeriod, fn: mean, createEmpty: false)\n  |> yield(name: \"mean\")\n",
               "refId": "A"
@@ -2243,7 +2243,7 @@
         {
           "datasource": {
             "type": "influxdb",
-            "uid": "febc5uy7o2680f"
+            "uid": "P81B2C7F097038F1D"
           },
           "description": "",
           "fieldConfig": {
@@ -2326,7 +2326,7 @@
             {
               "datasource": {
                 "type": "influxdb",
-                "uid": "febc5uy7o2680f"
+                "uid": "P81B2C7F097038F1D"
               },
               "query": "from(bucket: \"mina-benchmarks\")\n  |> range(start: v.timeRangeStart, stop: v.timeRangeStop)\n  |> filter(fn: (r) => r[\"category\"] =~ /^zkapp$/)\n  |> filter(fn: (r) => r[\"_field\"] == \"pairs of signed\")\n  |> filter(fn: (r) => r[\"gitbranch\"] =~ /^compatible$/)\n  |> filter(fn: (r) => r[\"_measurement\"] =~ /^${measurementFilterQuery:regex}$/)\n  |> group(columns: [\"_measurement\"])\n  |> aggregateWindow(every: v.windowPeriod, fn: mean, createEmpty: false)\n  |> yield(name: \"mean\")\n",
               "refId": "A"
@@ -2338,7 +2338,7 @@
         {
           "datasource": {
             "type": "influxdb",
-            "uid": "febc5uy7o2680f"
+            "uid": "P81B2C7F097038F1D"
           },
           "description": "",
           "fieldConfig": {
@@ -2421,7 +2421,7 @@
             {
               "datasource": {
                 "type": "influxdb",
-                "uid": "febc5uy7o2680f"
+                "uid": "P81B2C7F097038F1D"
               },
               "query": "from(bucket: \"mina-benchmarks\")\n  |> range(start: v.timeRangeStart, stop: v.timeRangeStop)\n  |> filter(fn: (r) => r[\"category\"] =~ /^zkapp$/)\n  |> filter(fn: (r) => r[\"_field\"] == \"pairs of signed\")\n  |> filter(fn: (r) => r[\"gitbranch\"] =~ /^develop$/)\n  |> filter(fn: (r) => r[\"_measurement\"] =~ /^${measurementFilterQuery:regex}$/)\n  |> group(columns: [\"_measurement\"])\n  |> aggregateWindow(every: v.windowPeriod, fn: mean, createEmpty: false)\n  |> yield(name: \"mean\")\n",
               "refId": "A"
@@ -2433,7 +2433,7 @@
         {
           "datasource": {
             "type": "influxdb",
-            "uid": "febc5uy7o2680f"
+            "uid": "P81B2C7F097038F1D"
           },
           "description": "",
           "fieldConfig": {
@@ -2516,7 +2516,7 @@
             {
               "datasource": {
                 "type": "influxdb",
-                "uid": "febc5uy7o2680f"
+                "uid": "P81B2C7F097038F1D"
               },
               "query": "from(bucket: \"mina-benchmarks\")\n  |> range(start: v.timeRangeStart, stop: v.timeRangeStop)\n  |> filter(fn: (r) => r[\"category\"] =~ /^zkapp$/)\n  |> filter(fn: (r) => r[\"_field\"] == \"signed updates\")\n  |> filter(fn: (r) => r[\"gitbranch\"] =~ /^compatible$/)\n  |> filter(fn: (r) => r[\"_measurement\"] =~ /^${measurementFilterQuery:regex}$/)\n  |> group(columns: [\"_measurement\"])\n  |> aggregateWindow(every: v.windowPeriod, fn: mean, createEmpty: false)\n  |> yield(name: \"mean\")\n",
               "refId": "A"
@@ -2528,7 +2528,7 @@
         {
           "datasource": {
             "type": "influxdb",
-            "uid": "febc5uy7o2680f"
+            "uid": "P81B2C7F097038F1D"
           },
           "description": "",
           "fieldConfig": {
@@ -2611,7 +2611,7 @@
             {
               "datasource": {
                 "type": "influxdb",
-                "uid": "febc5uy7o2680f"
+                "uid": "P81B2C7F097038F1D"
               },
               "query": "from(bucket: \"mina-benchmarks\")\n  |> range(start: v.timeRangeStart, stop: v.timeRangeStop)\n  |> filter(fn: (r) => r[\"category\"] =~ /^zkapp$/)\n  |> filter(fn: (r) => r[\"_field\"] == \"signed updates\")\n  |> filter(fn: (r) => r[\"gitbranch\"] =~ /^develop$/)\n  |> filter(fn: (r) => r[\"_measurement\"] =~ /^${measurementFilterQuery:regex}$/)\n  |> group(columns: [\"_measurement\"])\n  |> aggregateWindow(every: v.windowPeriod, fn: mean, createEmpty: false)\n  |> yield(name: \"mean\")\n",
               "refId": "A"
@@ -2623,7 +2623,7 @@
         {
           "datasource": {
             "type": "influxdb",
-            "uid": "febc5uy7o2680f"
+            "uid": "P81B2C7F097038F1D"
           },
           "description": "",
           "fieldConfig": {
@@ -2706,7 +2706,7 @@
             {
               "datasource": {
                 "type": "influxdb",
-                "uid": "febc5uy7o2680f"
+                "uid": "P81B2C7F097038F1D"
               },
               "query": "from(bucket: \"mina-benchmarks\")\n  |> range(start: v.timeRangeStart, stop: v.timeRangeStop)\n  |> filter(fn: (r) => r[\"category\"] =~ /^zkapp$/)\n  |> filter(fn: (r) => r[\"_field\"] == \"cost\")\n  |> filter(fn: (r) => r[\"gitbranch\"] =~ /^compatible$/)\n  |> filter(fn: (r) => r[\"_measurement\"] =~ /^${measurementFilterQuery:regex}$/)\n  |> group(columns: [\"_measurement\"])\n  |> aggregateWindow(every: v.windowPeriod, fn: mean, createEmpty: false)\n  |> yield(name: \"mean\")\n",
               "refId": "A"
@@ -2718,7 +2718,7 @@
         {
           "datasource": {
             "type": "influxdb",
-            "uid": "febc5uy7o2680f"
+            "uid": "P81B2C7F097038F1D"
           },
           "description": "",
           "fieldConfig": {
@@ -2801,7 +2801,7 @@
             {
               "datasource": {
                 "type": "influxdb",
-                "uid": "febc5uy7o2680f"
+                "uid": "P81B2C7F097038F1D"
               },
               "query": "from(bucket: \"mina-benchmarks\")\n  |> range(start: v.timeRangeStart, stop: v.timeRangeStop)\n  |> filter(fn: (r) => r[\"category\"] =~ /^zkapp$/)\n  |> filter(fn: (r) => r[\"_field\"] == \"cost\")\n  |> filter(fn: (r) => r[\"gitbranch\"] =~ /^develop$/)\n  |> filter(fn: (r) => r[\"_measurement\"] =~ /^${measurementFilterQuery:regex}$/)\n  |> group(columns: [\"_measurement\"])\n  |> aggregateWindow(every: v.windowPeriod, fn: mean, createEmpty: false)\n  |> yield(name: \"mean\")\n",
               "refId": "A"
@@ -2827,7 +2827,7 @@
         {
           "datasource": {
             "type": "influxdb",
-            "uid": "febc5uy7o2680f"
+            "uid": "P81B2C7F097038F1D"
           },
           "description": "",
           "fieldConfig": {
@@ -2910,7 +2910,7 @@
             {
               "datasource": {
                 "type": "influxdb",
-                "uid": "febc5uy7o2680f"
+                "uid": "P81B2C7F097038F1D"
               },
               "query": "from(bucket: \"mina-benchmarks\")\n  |> range(start: v.timeRangeStart, stop: v.timeRangeStop)\n  |> filter(fn: (r) => r[\"category\"] =~ /^heap_usage$/)\n  |> filter(fn: (r) => r[\"_field\"] == \"bytes\")\n  |> filter(fn: (r) => r[\"gitbranch\"] =~ /^compatible$/)\n  |> filter(fn: (r) => r[\"_measurement\"] =~ /^${measurementFilterQuery:regex}$/)\n  |> group(columns: [\"_measurement\"])\n  |> aggregateWindow(every: v.windowPeriod, fn: mean, createEmpty: false)\n  |> yield(name: \"mean\")\n",
               "refId": "A"
@@ -2922,7 +2922,7 @@
         {
           "datasource": {
             "type": "influxdb",
-            "uid": "febc5uy7o2680f"
+            "uid": "P81B2C7F097038F1D"
           },
           "description": "",
           "fieldConfig": {
@@ -3005,7 +3005,7 @@
             {
               "datasource": {
                 "type": "influxdb",
-                "uid": "febc5uy7o2680f"
+                "uid": "P81B2C7F097038F1D"
               },
               "query": "from(bucket: \"mina-benchmarks\")\n  |> range(start: v.timeRangeStart, stop: v.timeRangeStop)\n  |> filter(fn: (r) => r[\"category\"] =~ /^heap_usage$/)\n  |> filter(fn: (r) => r[\"_field\"] == \"bytes\")\n  |> filter(fn: (r) => r[\"gitbranch\"] =~ /^develop$/)\n  |> filter(fn: (r) => r[\"_measurement\"] =~ /^${measurementFilterQuery:regex}$/)\n  |> group(columns: [\"_measurement\"])\n  |> aggregateWindow(every: v.windowPeriod, fn: mean, createEmpty: false)\n  |> yield(name: \"mean\")\n",
               "refId": "A"
@@ -3017,7 +3017,7 @@
         {
           "datasource": {
             "type": "influxdb",
-            "uid": "febc5uy7o2680f"
+            "uid": "P81B2C7F097038F1D"
           },
           "description": "",
           "fieldConfig": {
@@ -3100,7 +3100,7 @@
             {
               "datasource": {
                 "type": "influxdb",
-                "uid": "febc5uy7o2680f"
+                "uid": "P81B2C7F097038F1D"
               },
               "query": "from(bucket: \"mina-benchmarks\")\n  |> range(start: v.timeRangeStart, stop: v.timeRangeStop)\n  |> filter(fn: (r) => r[\"category\"] =~ /^heap_usage$/)\n  |> filter(fn: (r) => r[\"_field\"] == \"heap words\")\n  |> filter(fn: (r) => r[\"gitbranch\"] =~ /^compatible$/)\n  |> filter(fn: (r) => r[\"_measurement\"] =~ /^${measurementFilterQuery:regex}$/)\n  |> group(columns: [\"_measurement\"])\n  |> aggregateWindow(every: v.windowPeriod, fn: mean, createEmpty: false)\n  |> yield(name: \"mean\")\n",
               "refId": "A"
@@ -3112,7 +3112,7 @@
         {
           "datasource": {
             "type": "influxdb",
-            "uid": "febc5uy7o2680f"
+            "uid": "P81B2C7F097038F1D"
           },
           "description": "",
           "fieldConfig": {
@@ -3195,7 +3195,7 @@
             {
               "datasource": {
                 "type": "influxdb",
-                "uid": "febc5uy7o2680f"
+                "uid": "P81B2C7F097038F1D"
               },
               "query": "from(bucket: \"mina-benchmarks\")\n  |> range(start: v.timeRangeStart, stop: v.timeRangeStop)\n  |> filter(fn: (r) => r[\"category\"] =~ /^heap_usage$/)\n  |> filter(fn: (r) => r[\"_field\"] == \"heap words\")\n  |> filter(fn: (r) => r[\"gitbranch\"] =~ /^develop$/)\n  |> filter(fn: (r) => r[\"_measurement\"] =~ /^${measurementFilterQuery:regex}$/)\n  |> group(columns: [\"_measurement\"])\n  |> aggregateWindow(every: v.windowPeriod, fn: mean, createEmpty: false)\n  |> yield(name: \"mean\")\n",
               "refId": "A"
@@ -3222,7 +3222,7 @@
         },
         "datasource": {
           "type": "influxdb",
-          "uid": "febc5uy7o2680f"
+          "uid": "P81B2C7F097038F1D"
         },
         "definition": "import \"influxdata/influxdb/schema\"\nschema.tagValues(\n  bucket: \"mina-benchmarks\",\n  tag: \"gitbranch\"\n)",
         "description": "",
@@ -3247,7 +3247,7 @@
         },
         "datasource": {
           "type": "influxdb",
-          "uid": "febc5uy7o2680f"
+          "uid": "P81B2C7F097038F1D"
         },
         "definition": "import \"influxdata/influxdb/schema\"\nschema.tagValues(\n  bucket: \"mina-benchmarks\",\n  tag: \"_field\"\n)",
         "description": "",
@@ -3272,7 +3272,7 @@
         },
         "datasource": {
           "type": "influxdb",
-          "uid": "febc5uy7o2680f"
+          "uid": "P81B2C7F097038F1D"
         },
         "definition": "import \"influxdata/influxdb/schema\"\nschema.tagValues(\n  bucket: \"mina-benchmarks\",\n  tag: \"_measurement\"\n)",
         "description": "",
